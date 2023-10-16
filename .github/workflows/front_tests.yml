@@ -13,9 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ../front
+
     strategy:
       matrix:
         node-version: [14.x]
@@ -28,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: front/package-lock.json
+        cache-dependency-path: front/package.json
 
     - run: npm test
