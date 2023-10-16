@@ -33,6 +33,10 @@ jobs:
    # - name: Build with Maven
    #   run: mvn -B package --file pom.xml
 
-    - name: Run Tests
+    - name: Build project
       run: mvn clean package
+      working-directory: back
+    
+    - name: Run Tests
+      run: mvn verify
       working-directory: back
