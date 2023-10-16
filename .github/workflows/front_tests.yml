@@ -31,5 +31,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: front/package.json
 
+    - run: npm install
     - run: npm run build
     - run: npm run test
