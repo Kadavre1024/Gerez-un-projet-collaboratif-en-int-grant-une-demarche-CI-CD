@@ -13,6 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ng-toolkit 
 
     strategy:
       matrix:
@@ -29,4 +32,4 @@ jobs:
         cache-dependency-path: front/package.json
 
     - run: npm build
-    - run: npm test
+    - run: npm run test
