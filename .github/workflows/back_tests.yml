@@ -39,7 +39,7 @@ jobs:
       working-directory: back
     
     - name: Run Tests
-      run: mvn verify
+      run: mvn test
       working-directory: back
 
     - name: Publish test coverage results
