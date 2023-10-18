@@ -51,25 +51,36 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         
     # generates coverage-report.md and publishes as checkrun
-    - name: JaCoCo Code Coverage Report
-      id: jacoco_reporter
-      uses: PavanMudigonda/jacoco-reporter@v4.8
+    #- name: JaCoCo Code Coverage Report
+    #  id: jacoco_reporter
+    #  uses: PavanMudigonda/jacoco-reporter@v4.8
+    #  with:
+    #    coverage_results_path: 'back/target/site/jacoco/jacoco.xml'
+    #    coverage_report_name: Coverage
+    #    coverage_report_title: JaCoCo
+    #    github_token: ${{ secrets.GITHUB_TOKEN }}
+    #    skip_check_run: false
+    #    minimum_coverage: 80
+    #    fail_below_threshold: false
+    #    publish_only_summary: false
+
+    - name: Jacoco Report to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.6.1
       with:
-        coverage_results_path: 'back/target/site/jacoco/jacoco.xml'
-        coverage_report_name: Coverage
-        coverage_report_title: JaCoCo
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        skip_check_run: false
-        minimum_coverage: 80
-        fail_below_threshold: false
-        publish_only_summary: false
-      
+        paths: ${{ github.workspace }}/back/target/site/jacoco/jacoco.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 10
+        min-coverage-changed-files: 60
+        title: '# :lobster: Coverage Report'
+        pass-emoji: ':green_circle:'
+        fail-emoji: ':red_circle:'
 
     
 
     # Publish Coverage Job Summary Optional
     - name: Add Coverage Job Summary
-      run: echo "${{ jacoco_reporter.outputs.coverageSummary }}" >> $GITHUB_STEP_SUMMARY
+      run: echo "${{ steps.jacoco_reporter.outputs.coverageSummary }}" >> $GITHUB_STEP_SUMMARY
 
     # uploads the coverage-report.md artifact  # Optional
 
