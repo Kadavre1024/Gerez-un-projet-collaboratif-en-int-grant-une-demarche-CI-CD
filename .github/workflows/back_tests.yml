@@ -52,3 +52,14 @@ jobs:
       run: |
         echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}" >> $GITHUB_STEP_SUMMARY
         echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}" >> $GITHUB_STEP_SUMMARY
+    - name: Test Report
+      uses: phoenix-actions/test-reporting@v8
+      id: test-report               # Set ID reference for step
+      with:
+        name: JUnit Tests            # Name of the check run which will be created
+        path: ${{ github.workspace }}/back/target/site/jacoco/jacoco.xml   # Path to test results
+        reporter: java-junit        # Format of test results
+
+    - name: Read output variables
+      run: |
+        echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
