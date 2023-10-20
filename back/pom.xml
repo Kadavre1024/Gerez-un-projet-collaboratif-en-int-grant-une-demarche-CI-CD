@@ -46,6 +46,7 @@
 				<version>0.8.5</version>
 				<executions>
 					<execution>
+						<id>before-test-execution</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
