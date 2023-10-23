@@ -52,10 +52,9 @@ jobs:
       run: |
         echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}" >> $GITHUB_STEP_SUMMARY
         echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}" >> $GITHUB_STEP_SUMMARY
-  report:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: phoenix-actions/test-reporting@v8
+        
+    - name: Test Report
+      uses: phoenix-actions/test-reporting@v8
       id: test-report                     # Set ID reference for step
       with:
         artifact: test-results            # artifact name
