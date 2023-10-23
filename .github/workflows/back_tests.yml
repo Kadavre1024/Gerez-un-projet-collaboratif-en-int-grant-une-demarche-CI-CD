@@ -61,5 +61,5 @@ jobs:
         name: Junit Tests                  # Name of the check run which will be created
         path: '${{ github.workspace }}/back/target/site/jacoco/jacoco.xml'         # Path to test results (inside artifact .zip)
         token: ${{ secrets.GITHUB_TOKEN }}                    
-        reporter: java-junit              # Format of test results
+        reporter: jest-junit              # Format of test results
     
