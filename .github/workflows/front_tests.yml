@@ -39,4 +39,4 @@ jobs:
         npm test
     - uses: romeovs/lcov-reporter-action@v0.2.16
       with:
-        lcov-file: front/coverage/lcov.info
+        lcov-file: ${{ github.workspace }}/front/coverage/lcov.info
