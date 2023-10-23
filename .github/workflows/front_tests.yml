@@ -36,13 +36,8 @@ jobs:
         export DISPLAY=:99
         sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
         npm test --watch=false --no-progress --browsers=ChromeHeadless --code-coverage
-    - name: Coverage report
-      id: report
-      uses: eleboys/test-coverage-report-action@v1.0.2  
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: coverage/coverage-summary.json
-        title: Karma Test Coverage
+    - name: Codecov
+      id: codecov
+      uses: codecov/codecov-action@v1.1.1
     
-    - name: Print the output summary
-      run: echo "Report coverage json ${{ steps.report.outputs.summary }}"
+    
