@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 118.0.5993.71 (Windows 10)" package="" timestamp="2023-10-24T15:57:49" id="0" hostname="BOOK-MC72IO1DT8" tests="2" errors="0" failures="0" time="0.046">
+<testsuite name="Chrome Headless 118.0.5993.71 (Windows 10)" package="" timestamp="2023-10-24T21:22:52" id="0" hostname="BOOK-MC72IO1DT8" tests="2" errors="0" failures="0" time="0.049">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/118.0.5993.71 Safari/537.36"/>
   </properties>
-  <testcase name="JokesService should be created" time="0.018" classname="Chrome_Headless_118_0_5993_71_(Windows_10).JokesService"/>
-  <testcase name="AppComponent should create the app" time="0.028" classname="Chrome_Headless_118_0_5993_71_(Windows_10).AppComponent"/>
+  <testcase name="AppComponent should create the app" time="0.047" classname="Chrome_Headless_118_0_5993_71_(Windows_10).AppComponent"/>
+  <testcase name="JokesService should be created" time="0.002" classname="Chrome_Headless_118_0_5993_71_(Windows_10).JokesService"/>
   <system-out>
     <![CDATA[Chrome Headless 118.0.5993.71 (Windows 10) ERROR: 'NG0304: 'mat-toolbar' is not a known element (used in the 'AppComponent' component template):
 1. If 'mat-toolbar' is an Angular component, then verify that it is a part of an @NgModule where this component is declared.
