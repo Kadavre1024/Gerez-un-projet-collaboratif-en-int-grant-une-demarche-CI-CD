@@ -33,7 +33,7 @@ jobs:
         cache: maven
 
     - name: Build project
-      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent
+      run: mvn clean package
       working-directory: back
 
     - name: Jacoco Report to PR
