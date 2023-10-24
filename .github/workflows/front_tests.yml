@@ -32,20 +32,7 @@ jobs:
 
     - run: npm ci
     - run: npm build
-    - run: npm test --watch=false --browsers=ChromeHeadless --code-coverage --reporters=mocha
-
-    - name: Test Report
-      uses: phoenix-actions/test-reporting@v8
-      id: test-report               # Set ID reference for step
-      if: success() || failure()
-      with:
-        name: JEST Tests            # Name of the check run which will be created
-        path:  ${{ github.workspace }}/front/Chrome_Headless_118.0.5993.71_(Windows_10)/test-results.xml    # Path to test results
-        reporter: jest-junit        # Format of test results
-
-    - name: Read output variables
-      run: |
-        echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
+    - run: npm test --watch=false --browsers=ChromeHeadless --code-coverage
   
     
     
