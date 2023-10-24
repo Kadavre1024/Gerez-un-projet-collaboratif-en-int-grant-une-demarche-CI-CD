@@ -8,10 +8,15 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
-    - uses: phoenix-actions/test-reporting@v8
-      id: test-report                     # Set ID reference for step
+    - name: Jacoco Report to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.6.1
       with:
         artifact: test-results            # artifact name
-        name: JUnit Tests                  # Name of the check run which will be created
-        path: 'jacoco.xml'                     # Path to test results (inside artifact .zip)
-        reporter: jest-junit              # Format of test results
+        paths: 'jacoco.xml'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 0
+        min-coverage-changed-files: 0
+        title: '# :lobster: Coverage Report'
+        pass-emoji: ':green_circle:'
+        fail-emoji: ':red_circle:'
