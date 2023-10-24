@@ -33,7 +33,7 @@ module.exports = function (config) {
         { type: 'lcovonly' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
