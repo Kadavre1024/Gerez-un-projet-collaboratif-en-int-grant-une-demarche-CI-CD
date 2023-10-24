@@ -38,6 +38,8 @@ jobs:
         npm test --watch=false --no-progress --browsers=ChromeHeadless --code-coverage
     - name: Codecov
       id: codecov
-      uses: codecov/codecov-action@v1.1.1
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     
