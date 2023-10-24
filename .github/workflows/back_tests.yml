@@ -33,7 +33,7 @@ jobs:
         cache: maven
 
     - name: Build project
-      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent
       working-directory: back
 
     - name: Jacoco Report to PR
