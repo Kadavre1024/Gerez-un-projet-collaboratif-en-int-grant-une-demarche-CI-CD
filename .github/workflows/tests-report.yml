@@ -12,7 +12,6 @@ jobs:
       id: test-report                     # Set ID reference for step
       with:
         artifact: test-results            # artifact name
-        name: Junit Tests                  # Name of the check run which will be created
-        path: '${{ github.workspace }}/back/target/site/jacoco/jacoco.xml'         # Path to test results (inside artifact .zip)
-        token: ${{ secrets.GITHUB_TOKEN }}                    
+        name: JUnit Tests                  # Name of the check run which will be created
+        path: '*.xml'                     # Path to test results (inside artifact .zip)
         reporter: java-junit              # Format of test results
