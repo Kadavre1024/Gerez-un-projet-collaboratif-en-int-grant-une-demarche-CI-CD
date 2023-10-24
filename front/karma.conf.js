@@ -30,10 +30,10 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' },
-        { type: 'lcovonly' }
+        { type: 'mocha' }
       ]
     },
-    reporters: ['progress', 'kjhtml', 'mocha'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
