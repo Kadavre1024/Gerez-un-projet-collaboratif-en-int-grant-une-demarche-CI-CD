@@ -48,8 +48,8 @@ jobs:
         pass-emoji: ':green_circle:'
         fail-emoji: ':red_circle:'
 
-    - name: Get the Coverage info
-      run: |
-        echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}" >> $GITHUB_STEP_SUMMARY
-        echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}" >> $GITHUB_STEP_SUMMARY
+    #- name: Get the Coverage info
+    #  run: |
+    #    echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}" >> $GITHUB_STEP_SUMMARY
+    #    echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}" >> $GITHUB_STEP_SUMMARY
     
