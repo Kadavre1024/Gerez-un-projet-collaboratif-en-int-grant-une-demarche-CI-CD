@@ -33,7 +33,7 @@ jobs:
 
     - run: npm ci
     - run: npm build
-    - run: npm test --no-watch --browsers ChromeHeadless --code-coverage
+    - run: npm test --no-watch --browsers=ChromeHeadless --code-coverage
 
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
