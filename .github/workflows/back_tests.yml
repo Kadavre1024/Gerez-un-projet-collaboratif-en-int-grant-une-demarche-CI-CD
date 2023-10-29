@@ -101,6 +101,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn mvn -B -U -ntp verify verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Kadavre1024_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD -f pom.xml
+        run: mvn -B -U -ntp verify verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Kadavre1024_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD -f pom.xml
         working-directory: back
   
