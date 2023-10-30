@@ -1,11 +1,10 @@
 name: ci-docker
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-    types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: ["Back-end CI", "Front-end CI"]
+    types:
+        - completed
 
 jobs:
   back-end:
