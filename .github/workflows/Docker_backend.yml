@@ -1,4 +1,4 @@
-name: ci-docker
+name: Backend Docker
 
 on:
   workflow_run:
